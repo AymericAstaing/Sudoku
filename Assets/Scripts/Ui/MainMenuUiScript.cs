@@ -17,6 +17,11 @@ public class MainMenuUiScript : GameManagedObject
 
     }
 
+    public void test()
+    {
+        canvas.enabled = false;
+    }
+
     private void getLocalComponents()
     {
         canvas = GetComponent<Canvas>();
