@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OnPress : MonoBehaviour
+public class OnPressd : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,8 +17,8 @@ public class OnPress : MonoBehaviour
 
     }
 
-    public void onPressed()
+    public void test()
     {
-        this.GetComponent<Button>().enabled = false;
+        this.GetComponent<Canvas>().enabled = false;
     }
 }
