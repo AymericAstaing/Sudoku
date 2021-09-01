@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class UserDataManager : MonoBehaviour
+public class UserDataManager
 {
     private UserData userData;
     public UserPreferences userPreferences;
@@ -26,11 +26,8 @@ public class UserDataManager : MonoBehaviour
 
     private void checkUserFistLog()
     {
-        if (userData.getId() == 0) {
+        if (userData.getId() == 0)
             updateUserData(new UserData(Random.Range(MIN_ID_NBR, MAX_ID_NBR), userData.getLevel()));
-            print("UserDataManager: new id created -> " + userData.getId());
-        } else
-            print("UserDataManager: User already knowed, id is -> " + userData.getId());
     }
 
     public void updateUserData(UserData uData)

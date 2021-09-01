@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     private LevelGenerationManager levelGenerationManager;
     private StateManager stateManager;
     private GameDataManager gameDataManager;
+    private UIEventManager uIEventManager;
     private BoardManager boardManager;
 
     void Start()
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour
     {
         levelGenerationManager = GetComponent<LevelGenerationManager>();
         stateManager = GetComponent<StateManager>();
-        gameDataManager = GetComponent<GameDataManager>();
+        uIEventManager = GetComponent<UIEventManager>();
         GameObject gameViewUi = GameObject.FindGameObjectWithTag("UiGameViewTag");
         boardManager = gameViewUi.GetComponent<BoardManager>();
     }
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     public void startGame()
     {
+        Debug.Log("START");
         print("GameManager: start game");
         boardManager.setUpLevelBoard(levelGenerationManager.getLevel(Sudoku.Difficulty.SIMPLE));
         stateManager.emitState(Sudoku.GameState.IN_GAME);

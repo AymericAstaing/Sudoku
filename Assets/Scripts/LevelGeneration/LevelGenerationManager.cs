@@ -6,7 +6,8 @@ public class LevelGenerationManager : MonoBehaviour
     Level[] levels;
     private static int TOTAL_POSSIBLE_LEVEL = 200;
     private static int DOT = 46;
-    string levelPatternsFile = "Assets/Resources/Patterns/BoardPatterns.txt";
+    private static int COMMA_NEWLINE_CHARS = 2;
+    private static string levelPatternsFile = "Patterns/BoardPatterns";
 
     public Level getLevel(Sudoku.Difficulty difficulty)
     {
@@ -27,7 +28,9 @@ public class LevelGenerationManager : MonoBehaviour
     {
         print("LevelGenerationManager: parsePatternFile");
         levels = new Level[TOTAL_POSSIBLE_LEVEL];
-        string[] lines = System.IO.File.ReadAllLines(levelPatternsFile);
+        TextAsset theList = Resources.Load<TextAsset>(levelPatternsFile);
+        string txtContent = theList.text;
+        string[] lines = txtContent.Split('\n');
         for (int i = 0; i < TOTAL_POSSIBLE_LEVEL; ++i) {
             Level l = new Level(i, getCurrentLevelDifficulty(i), getExctractedBoard(lines[i]));
             levels[i] = l;
@@ -48,13 +51,12 @@ public class LevelGenerationManager : MonoBehaviour
     private int[] getExctractedBoard(string currentLine)
     {
         int[] board = new int[Sudoku.TOTAL_TILE_NBR_9x9];
-
-        for (int i = 0; i < currentLine.Length - 1; ++i) {
+        for (int i = 0; i < currentLine.Length - COMMA_NEWLINE_CHARS; ++i) {
             if (currentLine[i] == DOT) {
                 board[i] = 0;
                 continue;
             }
-            board[i] = (int) char.GetNumericValue(currentLine[i]);
+                    board[i] = (int) char.GetNumericValue(currentLine[i]);
         }
         return board;
     }

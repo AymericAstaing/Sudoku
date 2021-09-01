@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class UserPreferences : MonoBehaviour
+public class UserPreferences
 {
     private static string LEVEL = "userLevel";
     private static string ID = "userId";

@@ -1692,12 +1692,13 @@ GameObject:
   - component: {fileID: 376509417}
   - component: {fileID: 376509416}
   - component: {fileID: 376509418}
+  - component: {fileID: 376509419}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &376509414
 Transform:
@@ -1707,7 +1708,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376509413}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5267944, y: -4.0901885, z: -1.6761599}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1759,6 +1760,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6039f0db1b63c0046b564b6f6d86b2d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &376509419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376509413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41e268a25ab05243a73c0605100d39e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &392575485
@@ -3511,7 +3524,6 @@ GameObject:
   - component: {fileID: 786675809}
   - component: {fileID: 786675808}
   - component: {fileID: 786675812}
-  - component: {fileID: 786675813}
   m_Layer: 5
   m_Name: MainMenuUI
   m_TagString: Untagged
@@ -3609,18 +3621,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 705f2bd7138d7c0449e9be20deed212a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &786675813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786675807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bec2ba118c28f2448bd9ba9b4cfbb82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &805528639
@@ -7090,8 +7090,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 786675813}
-        m_MethodName: test
+      - m_Target: {fileID: 376509417}
+        m_MethodName: startGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
